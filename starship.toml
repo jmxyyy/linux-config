@@ -1,0 +1,340 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "catppuccin_mocha"
+
+format = """
+[╭─]()\
+$os\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+
+$cpp\
+$python\
+$rust\
+$go\
+$zig\
+$bun\
+$nodejs\
+
+$sudo\
+$status\
+$line_break\
+[╰─]()\
+$character\
+"""
+add_newline = true
+
+[os]
+format = '[$symbol ]($style)'
+style = 'bold blue'
+disabled = false
+
+[os.symbols]
+Alpine = ''
+Amazon = ''
+Android = ''
+Arch = '󰣇'
+CentOS = ''
+Debian = ''
+EndeavourOS = ''
+Fedora = ''
+FreeBSD = ''
+Garuda = ''
+Gentoo = ''
+Linux = ''
+Macos = ''
+Manjaro = ''
+Mariner = ''
+Mint = ''
+NetBSD = ''
+NixOS = ''
+OpenBSD = ''
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = ''
+OracleLinux = '⊂⊃'
+Pop = ''
+Raspbian = ''
+Redhat = ''
+RedHatEnterprise = ''
+Solus = ''
+SUSE = ''
+Ubuntu = ''
+Unknown = ''
+Windows = ''
+
+[directory]
+#   📂     |
+# format = '[ $path]($style)[$read_only]($read_only_style) '
+format = '[$path]($style)[$read_only]($read_only_style) '
+style = 'bold peach'
+read_only_style = 'red'
+home_symbol = "~"
+truncation_symbol = '…/'
+truncation_length = 5
+read_only = ' 󰌾'
+use_os_path_sep = true
+#fish_style_pwd_dir_length = 1
+truncate_to_repo = true
+
+[git_branch]
+format = """
+[$symbol $branch]($style)\
+[(:$remote_name/$remote_branch)]($style)\
+"""
+#               |
+symbol = ''
+style = 'bold mauve'
+always_show_remote = true
+disabled = false
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style)) '
+style = 'bold red'
+# untracked:'?'; staged:'+'; modified:'!'; deleted:'x';
+#windows_starship = '/mnt/c/Users/username/scoop/apps/starship/current/starship.exe'
+
+[fill]
+symbol = ' '
+style = 'bright-black'
+disabled = true
+
+[status]
+# '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
+format = '$symbol'
+symbol = '[●\($status\)](bright-red) '
+# success_symbol = '[●](green) '
+not_executable_symbol = '[⌽\($status\)](bright-red) '
+not_found_symbol = '[◎\($status\)](bright-red) '
+sigint_symbol = '[✶\($status\)](bright-red) '
+signal_symbol = '[✕\($status\)](bright-red) '
+recognize_signal_code = true
+map_symbol = true
+disabled = false
+
+[cmd_duration] #        |
+format = '[ ](bright-red)[$duration]($style) '
+style = 'bold yellow'
+min_time = 2000
+show_milliseconds = false
+disabled = true
+
+[python]
+format = '[ ](bold green)[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
+symbol = '' # 󰌠  🐍 👾  |
+style = 'bold yellow'
+# detect_files = [['.python-version', '__init__.py', 'pyproject.toml', 'requirements.txt', 'setup.py', 'pixi.toml']]
+version_format = '${major}.${minor}'
+disabled = false
+
+[cpp]
+format = '[ ](bold green)[$name$version]($style) '
+symbol = '' #    |
+style = 'bold yellow'
+detect_extensions = ['c', 'h', 'hpp', 'cpp', 'cppm']
+commands = [['g++', '--version'], ['clang++', '--version']]
+version_format = '${major}.${minor}'
+disabled = false
+
+[rust]
+format = '[ ](bold green)[$symbol$version]($style) '
+symbol = ''
+style = 'bold yellow'
+version_format = '${major}.${minor}'
+disabled = false
+
+[bun]
+format = '[ ](bold green)[$symbol($version)]($style) '
+symbol = 'Bun'
+style = 'bright-purple'
+detect_files = ['bun.lockb', 'bunfig.toml']
+version_format = '${major}.${minor}'
+disabled = false
+
+[nodejs]
+format = '[ ](bold green)[$symbol($version)]($style) '
+symbol = 'Node'
+style = 'bright-purple'
+#detect_extensions = []
+detect_files = ['package.json', '.node-version', '.nvmrc']
+detect_folders = ['node_modules']
+not_capable_style = 'red'
+version_format = '${major}.${minor}'
+disabled = false
+
+[java]
+# ⚰︎ ♲ ⇞ ⚕︎ ☥ º                                 |
+format = '[ ](bold green)[${symbol}(${version} )]($style)'
+symbol = 'Java'
+style = 'bright-purple'
+detect_extensions = ['java', 'class', 'gradle', 'jar', 'cljs', 'cljc']
+detect_files = ['pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc']
+version_format = '${major}.${minor}'
+disabled = true
+
+[sudo]
+#           |
+format = '[$symbol]($style)'
+symbol = ' '
+style = 'bold 9'
+allow_windows = false
+disabled = true
+
+[time]
+#  🕙                  |
+format = '[ ](bold 248)[$time]($style) '
+style = 'bold bright-cyan'
+time_format = '%H:%M'
+use_12hr = false
+disabled = false
+
+[shell] #      _ |
+format = '[ ](bold 248)[$indicator]($style) '
+style = 'bold bright-blue'
+unknown_indicator = 'shell'
+powershell_indicator = 'powershell'
+fish_indicator = 'fish'
+bash_indicator = 'bash'
+zsh_indicator = 'zsh'
+disabled = false
+
+[username]
+#           |
+format = '[](bold 248)[$user]($style)'
+style_user = 'bold yellow'
+style_root = 'bold red'
+show_always = true
+
+[hostname]
+format = '[([ ]($style)$hostname)](bold bright-cyan)'
+ssh_symbol = '🌐 ' #   |
+style = 'bold green'
+ssh_only = true
+trim_at = ''
+aliases = { "loganmac.local" = "mac" }
+# detect_env_vars = ['!TMUX', 'SSH_CONNECTION']
+disabled = false
+
+[character]
+format = '$symbol '
+#success_symbol = '[](fg:bold light_green)'
+#success_symbol = '[☍](fg:bold light_green)'
+#success_symbol = '[☡](fg:bold light_green)'
+success_symbol = '[](bold green)'
+error_symbol = '[✘](bold red)'
+vimcmd_symbol = '[V](bold green)'
+
+# Palette definitions
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
+
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo = "#eebebe"
+pink = "#f4b8e4"
+mauve = "#ca9ee6"
+red = "#e78284"
+maroon = "#ea999c"
+peach = "#ef9f76"
+yellow = "#e5c890"
+green = "#a6d189"
+teal = "#81c8be"
+sky = "#99d1db"
+sapphire = "#85c1dc"
+blue = "#8caaee"
+lavender = "#babbf1"
+text = "#c6d0f5"
+subtext1 = "#b5bfe2"
+subtext0 = "#a5adce"
+overlay2 = "#949cbb"
+overlay1 = "#838ba7"
+overlay0 = "#737994"
+surface2 = "#626880"
+surface1 = "#51576d"
+surface0 = "#414559"
+base = "#303446"
+mantle = "#292c3c"
+crust = "#232634"
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
