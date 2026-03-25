@@ -14,6 +14,21 @@ return {
       ghost_text = {
         enabled = false,
       },
+      menu = {
+        border = "rounded",
+        draw = {
+          columns = {
+            { "kind_icon" },
+            { "label", "label_description", gap = 1 },
+            { "kind" },
+          },
+          components = {
+            kind = {
+              highlight = function(ctx) return "BlinkCmpKind" .. ctx.kind end,
+            },
+          },
+        },
+      },
     },
     cmdline = {
       completion = {
@@ -23,6 +38,11 @@ return {
         ghost_text = {
           enabled = true,
         },
+      },
+      keymap = {
+        ["<Tab>"] = { "accept", "fallback" },
+        ["<C-j>"] = { "select_next", "fallback" },
+        ["<C-k>"] = { "select_prev", "fallback" },
       },
     },
   },

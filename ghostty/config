@@ -1,4 +1,5 @@
 custom-shader = ~/.config/ghostty/bloom.glsl
+custom-shader = ~/.config/ghostty/cursor_warp.glsl
 theme = Catppuccin Mocha
 
 # Font Configuration
@@ -7,8 +8,11 @@ font-family = "Maple Mono NF CN"
 font-style = "SemiBold Italic"
 
 # Window Configuration
-window-inherit-working-directory = true
+window-inherit-working-directory = false
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
 window-decoration = true
+gtk-tabs-location = hidden
 # window-padding-x = 12
 # window-padding-y = 12
 background-opacity = 0.9
@@ -17,9 +21,6 @@ background-blur-radius = 32
 # Cursor Configuration
 cursor-style = block
 cursor-style-blink = false
-
-# Scrollback
-scrollback-limit = 3023
 
 # Terminal features
 mouse-hide-while-typing = true
@@ -41,20 +42,24 @@ keybind = ctrl+zero=reset_font_size
 keybind = global:cmd+backquote=toggle_quick_terminal
 keybind = alt+w=close_surface
 
-# keybind = alt+p>h=new_split:left
-# keybind = alt+p>j=new_split:down
-# keybind = alt+p>k=new_split:up
-# keybind = alt+p>l=new_split:right
-#
+keybind = alt+shift+o=toggle_tab_overview
+keybind = alt+shift+h=previous_tab
+keybind = alt+shift+l=next_tab
+
+keybind = alt+p>h=new_split:left
+keybind = alt+p>j=new_split:down
+keybind = alt+p>k=new_split:up
+keybind = alt+p>l=new_split:right
+
 keybind = alt+m>h=goto_split:left
 keybind = alt+m>j=goto_split:down
 keybind = alt+m>k=goto_split:up
 keybind = alt+m>l=goto_split:right
-#
-# keybind = alt+r>h=resize_split:left,20
-# keybind = alt+r>j=resize_split:down,20
-# keybind = alt+r>k=resize_split:up,20
-# keybind = alt+r>l=resize_split:right,20
+
+keybind = alt+r>h=resize_split:left,20
+keybind = alt+r>j=resize_split:down,20
+keybind = alt+r>k=resize_split:up,20
+keybind = alt+r>l=resize_split:right,20
 keybind = shift+enter=text:\x1b\r
 
 # Material 3 UI elements

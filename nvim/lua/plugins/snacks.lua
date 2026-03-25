@@ -7,7 +7,7 @@ return {
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
-    bigfile = { enabled = true },
+    bigfile = { enabled = false },
     dashboard = { enabled = true },
     image = { enabled = true, SNACKS_GHOSTTY = true },
     indent = {
@@ -19,7 +19,7 @@ return {
     input = { enabled = true },
     picker = { enabled = true },
     notifier = { enabled = true },
-    quickfile = { enabled = true },
+    quickfile = { enabled = false },
     scope = { enabled = true },
     scroll = { enabled = true },
     -- statuscolumn = { enabled = true },

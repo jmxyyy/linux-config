@@ -8,6 +8,7 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
+    arg = "lc",
     cn = {
       enabled = true,
       translator = true,

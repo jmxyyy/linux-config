@@ -7,10 +7,10 @@ return {
   ---@type render.md.UserConfig
   opts = {
     sign = {
-      enabled = true,
+      enabled = false,
     },
     latex = {
-      enabled = true,
+      enabled = false,
       highlight = "RenderMarkdownMath",
       position = "below",
       top_pad = 1,
