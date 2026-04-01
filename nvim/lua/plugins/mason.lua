@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize Mason
 
@@ -12,35 +12,12 @@ return {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
         -- install language servers
-        "bash-language-server",
-        "clangd",
-        "docker-compose-language-service",
-        "docker-language-server",
-        "gopls",
-        "json-lsp",
         "lua-language-server",
-        "markdown-oxide",
-        "neocmakelsp",
-        "rust-analyzer",
-        "stylua",
-        "tinymist",
-        "ty",
-        "yaml-language-server",
-        "zls",
 
-        -- install linter/formatters
-        "hadolint",
+        -- install formatters
         "stylua",
-        "ruff",
-        "clang-format",
-        "gersemi",
-        "jq",
-        "typstyle",
-        "yamlfmt",
 
         -- install debuggers
-        "codelldb",
-        "cpptools",
         "debugpy",
 
         -- install any other package

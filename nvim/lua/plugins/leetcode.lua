@@ -22,12 +22,10 @@ return {
     image_support = true,
     injector = {
       ["cpp"] = {
-        -- imports = function() return { "#include <bits/stdc++.h>", "using namespace std;" } end,
         before = {
           "#include <bits/stdc++.h> ",
           "using namespace std;",
         },
-        -- after = "int main() {}",
       },
     },
   },

@@ -5,8 +5,6 @@ return {
   -- all modules handle lazy loading internally
   lazy = false,
   opts = {
-    chartoggle = { enabled = true },
-    tree = { enabled = true },
     completion = {
       documentation = {
         auto_show = true,
@@ -33,7 +31,8 @@ return {
     cmdline = {
       completion = {
         menu = {
-          auto_show = function(ctx) return vim.fn.getcmdtype() == ":" end,
+          -- auto_show = function(ctx) return vim.fn.getcmdtype() == ":" end,
+          auto_show = true,
         },
         ghost_text = {
           enabled = true,

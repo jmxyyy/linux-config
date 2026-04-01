@@ -27,6 +27,11 @@ return {
       comment = true,
       string = true,
     },
-    keymaps = {},
+    keymaps = {
+      hover = false,
+      hover_manual = false,
+      replace = false,
+      toggle = false,
+    },
   },
 }

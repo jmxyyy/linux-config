@@ -1,3 +1,4 @@
+if true then return {} end
 return {
   "xeluxee/competitest.nvim",
   dependencies = "MunifTanjim/nui.nvim",

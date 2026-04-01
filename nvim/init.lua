@@ -25,16 +25,3 @@ end
 
 require "lazy_setup"
 require "polish"
-
--- 每行开头的缩进宽度
-vim.opt.shiftwidth = 2
--- 界面上 Tab 符号显示的宽度
-vim.opt.tabstop = 2
--- 编辑模式下按 Tab 键时光标移动的宽度
-vim.opt.softtabstop = 2
--- 将 Tab 键转换为空格
-vim.opt.expandtab = false
-vim.opt.smartindent = true
-vim.opt.breakindent = true
-vim.opt.breakindentopt = "shift:2"
-vim.opt.showbreak = "󱞩 "
